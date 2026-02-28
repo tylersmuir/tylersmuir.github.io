@@ -23,7 +23,7 @@ html {
 
 body {
     font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    font-size: 17px;
+    font-size: 19px;
     line-height: 1.7;
     color: var(--text-color);
     background-color: var(--background);
@@ -31,7 +31,7 @@ body {
 
 /* Layout */
 .container {
-    max-width: 900px;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 0 2rem;
 }
@@ -51,7 +51,7 @@ header .container {
 }
 
 header h1 {
-    font-size: 1.8rem;
+    font-size: 2rem;
     font-weight: 600;
     letter-spacing: -0.02em;
 }
@@ -82,7 +82,7 @@ nav a:hover {
 /* Profile section */
 .profile {
     display: grid;
-    grid-template-columns: 280px 1fr;
+    grid-template-columns: 300px 1fr;
     gap: 3rem;
     margin-bottom: 3rem;
     padding-bottom: 2rem;
@@ -96,7 +96,7 @@ nav a:hover {
 }
 
 .profile-info h2 {
-    font-size: 2rem;
+    font-size: 2.2rem;
     color: var(--primary-dark);
     margin-bottom: 0.5rem;
     font-weight: 600;
@@ -168,7 +168,7 @@ section {
 }
 
 section h2 {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     color: var(--primary-dark);
     margin-bottom: 1.5rem;
     padding-bottom: 0.5rem;
