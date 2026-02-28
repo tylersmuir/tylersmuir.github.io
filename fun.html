@@ -9,68 +9,75 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
     <header>
         <div class="container">
             <h1><a href="index.html">Tyler Muir</a></h1>
+            <button class="menu-toggle" aria-label="Toggle navigation menu">&#9776;</button>
             <nav>
                 <ul>
                     <li><a href="index.html">Research</a></li>
                     <li><a href="data.html">Data</a></li>
-                    <li><a href="fun.html">Fun</a></li>
+                    <li><a href="fun.html" class="active">Fun</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <main class="container">
+    <main class="container" id="main-content">
         <section>
             <h2>Fun</h2>
             <p style="margin-bottom: 2rem;">One of my favorite hobbies is surfing. Here are a few fun pictures from various surf trips.</p>
 
             <div class="photo-gallery">
-                <figure>
-                    <img src="images/mentawai1.jpg" alt="Surfing in Mentawai Islands">
-                </figure>
-                <figure>
-                    <img src="images/mentawai2.jpg" alt="Surfing in Mentawai Islands">
-                </figure>
-                <figure>
-                    <img src="images/mentawai3.jpg" alt="Surfing in Mentawai Islands">
-                </figure>
-                <figure>
-                    <img src="images/mentawai4.jpg" alt="Surfing in Mentawai Islands">
-                </figure>
+                <div class="gallery-grid">
+                    <figure>
+                        <img src="images/mentawai1.jpg" alt="Tyler surfing a wave in the Mentawai Islands, Indonesia">
+                    </figure>
+                    <figure>
+                        <img src="images/mentawai2.jpg" alt="Barrel wave breaking in the Mentawai Islands">
+                    </figure>
+                    <figure>
+                        <img src="images/mentawai3.jpg" alt="Riding a reef break wave in the Mentawai Islands">
+                    </figure>
+                    <figure>
+                        <img src="images/mentawai4.jpg" alt="Tropical surf session in the Mentawai Islands">
+                    </figure>
+                </div>
                 <p class="gallery-caption">Mentawai Islands, Indonesia</p>
             </div>
 
             <div class="photo-gallery">
-                <figure>
-                    <img src="images/chile1.jpg" alt="Punta de Lobos, Chile">
-                </figure>
+                <div class="gallery-grid">
+                    <figure>
+                        <img src="images/chile1.jpg" alt="Surfing the point break at Punta de Lobos, Chile">
+                    </figure>
+                </div>
                 <p class="gallery-caption">Punta de Lobos, Chile</p>
             </div>
 
             <div class="photo-gallery">
-                <figure>
-                    <img src="images/rhodeisland.jpg" alt="Surfing in Rhode Island">
-                </figure>
-                <p class="gallery-caption">Matanuck, Rhode Island (water temp 36!)</p>
+                <div class="gallery-grid">
+                    <figure>
+                        <img src="images/rhodeisland.jpg" alt="Cold water surfing in Matunuck, Rhode Island in winter">
+                    </figure>
+                </div>
+                <p class="gallery-caption">Matunuck, Rhode Island (water temp 36!)</p>
             </div>
 
             <div class="photo-gallery">
-                <figure>
-                    <img src="images/surfranch.jpg" alt="Surf Ranch Wave Pool">
-                </figure>
-                <p class="gallery-caption">Surf Ranch Wave Pool</p>
-            </div>
-
-            <div class="photo-gallery">
-                <figure>
-                    <img src="images/waco.jpg" alt="Wave Pool, Waco Texas">
-                </figure>
-                <p class="gallery-caption">Wave Pool, Waco Texas</p>
+                <div class="gallery-grid">
+                    <figure>
+                        <img src="images/surfranch.jpg" alt="Surfing at Kelly Slater's Surf Ranch wave pool">
+                    </figure>
+                    <figure>
+                        <img src="images/waco.jpg" alt="Surfing at BSR Cable Park wave pool in Waco, Texas">
+                    </figure>
+                </div>
+                <p class="gallery-caption">Wave Pools: Surf Ranch &amp; Waco, Texas</p>
             </div>
         </section>
     </main>
@@ -80,5 +87,10 @@
             <p>Tyler Muir &bull; UCLA Anderson School of Management</p>
         </div>
     </footer>
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('open');
+        });
+    </script>
 </body>
 </html>
