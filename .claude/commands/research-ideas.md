@@ -134,7 +134,7 @@ After all tracks, end with:
 
 Review all ideas generated above. Select the **2-3 strongest ideas** across all tracks — the ones you'd actually bet on becoming great papers. These are often ideas that combine elements from multiple tracks (Tyler's comparative advantage + clever identification + big question), but they don't have to be.
 
-For each winner, **expand the write-up to approximately 1-1.5 pages** (~400-600 words). Go deeper on:
+For each winner, **expand the write-up to approximately 1 page** (~400 words). Go deeper on:
 - **Data**: Spell out the full data construction pipeline — what you merge, how you clean it, key variable definitions, sample period and coverage
 - **Identification & method**: Walk through the empirical design step by step. What's the main regression or test? What are the key controls? What are the placebo tests or robustness checks that would make a referee happy?
 - **Contribution to literature**: Position the paper relative to 3-5 specific existing papers. What does this add that they don't do?
