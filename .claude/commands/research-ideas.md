@@ -130,9 +130,16 @@ Then list each idea using the 8-component format above.
 
 After all tracks, end with:
 
-### Cross-Track Synthesis
+### Cross-Track Synthesis — The Winners
 
-Identify 1-2 ideas that combine elements from multiple tracks. These are often the strongest ideas because they leverage Tyler's comparative advantage AND have a clever identification AND tackle a big question.
+Review all ideas generated above. Select the **2-3 strongest ideas** across all tracks — the ones you'd actually bet on becoming great papers. These are often ideas that combine elements from multiple tracks (Tyler's comparative advantage + clever identification + big question), but they don't have to be.
+
+For each winner, **expand the write-up to approximately 1-1.5 pages** (~400-600 words). Go deeper on:
+- **Data**: Spell out the full data construction pipeline — what you merge, how you clean it, key variable definitions, sample period and coverage
+- **Identification & method**: Walk through the empirical design step by step. What's the main regression or test? What are the key controls? What are the placebo tests or robustness checks that would make a referee happy?
+- **Contribution to literature**: Position the paper relative to 3-5 specific existing papers. What does this add that they don't do?
+- **Paper outline**: Sketch the likely section structure (e.g., "Section 1: motivating facts, Section 2: model, Section 3: main empirical results, Section 4: mechanism tests, Section 5: implications")
+- **Extensions and variations**: Note 1-2 ways the paper could pivot if the main result doesn't land as expected
 
 ---
 
