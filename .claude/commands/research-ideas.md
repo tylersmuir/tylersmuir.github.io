@@ -38,7 +38,7 @@ Multiple flags can be combined (e.g., `--next --ai` runs both those tracks). If 
 
 **Frequent co-authors:** Valentin Haddad, Alan Moreira, Lars Lochstoer, Arvind Krishnamurthy, Gary Gorton, Tobias Adrian
 
-**Data access:** CRSP, Compustat, TRACE, TAQ, options data, textual/NLP data, survey data, web-scraped data. Willing to buy promising datasets. Open to designing creative surveys (including using AI/Claude agents for survey design). Has research funding.
+**Data access:** CRSP, Compustat, TRACE, TAQ, options data, textual/NLP data, survey data, web-scraped data, plus additional institutional datasets through UCLA subscriptions. Has research funding and is willing to buy promising datasets (e.g., proprietary trade-level data, alternative data vendors, historical archives). Open to designing creative surveys (including using AI/Claude agents for survey design).
 
 **Constraints:** No climate finance. AI-leveraged ideas are a plus but not required. Co-author matching is not a consideration.
 
@@ -51,10 +51,11 @@ For each active track, generate **3-5 concrete research ideas**. For each idea p
 1. **Title** — A real paper title (specific, not generic)
 2. **Key question** — The precise research question in 1-2 sentences
 3. **Why it matters** — Why this is important and timely (2-3 sentences)
-4. **Core approach** — The data, identification strategy, and methodology in concrete detail (3-5 sentences). Be specific about which datasets, what variation, what tests.
-5. **Why Tyler** — Why Tyler Muir specifically is well-positioned for this (1-2 sentences connecting to his existing work)
-6. **Predicted finding / hypothesis** — What you expect the paper would find and why (1-2 sentences)
-7. **Risk factors** — What could go wrong or make this paper not work (1 sentence)
+4. **Data** — Name the exact datasets required. For each dataset, state: (a) what it is, (b) where to get it (vendor name, URL, or institution), and (c) whether it's freely available, requires a subscription Tyler likely has, or must be purchased (with approximate cost if known). Every dataset must be a real, obtainable dataset — not hypothetical. If data must be constructed (e.g., web-scraped or LLM-extracted), describe the source and feasibility concretely.
+5. **Identification & method** — The identification strategy and methodology in concrete detail (3-5 sentences). Be specific about what variation you exploit, what the key tests are, and what the empirical design looks like.
+6. **Why Tyler** — Why Tyler Muir specifically is well-positioned for this (1-2 sentences connecting to his existing work)
+7. **Predicted finding / hypothesis** — What you expect the paper would find and why (1-2 sentences)
+8. **Risk factors** — What could go wrong or make this paper not work (1 sentence)
 
 **Quality bar:** Each idea should be specific enough that a PhD student could start working on it tomorrow. No hand-waving. The identification strategy must be concrete. The question must be novel — not something already well-studied.
 
@@ -125,7 +126,7 @@ Then for each active track, output:
 
 Brief (1-2 sentence) overview of the track's theme for this run.
 
-Then list each idea using the 7-component format above.
+Then list each idea using the 8-component format above.
 
 After all tracks, end with:
 
@@ -140,7 +141,7 @@ Identify 1-2 ideas that combine elements from multiple tracks. These are often t
 - **Be specific, not generic.** "Study how intermediaries affect crypto markets" is too vague. "Use the collapse of FTX as a natural experiment to estimate the intermediary channel in crypto pricing, exploiting cross-token variation in FTX's market-making share" is specific.
 - **Be novel.** Search your knowledge for whether this has been done. If a paper already exists on this exact topic, don't suggest it.
 - **Be honest about risks.** Every idea has risks. State them.
-- **Think about data feasibility.** Don't suggest ideas requiring data that doesn't exist.
+- **Data must be real and obtainable.** Every dataset you name must actually exist and be feasible to acquire. Name the vendor or source. Don't propose ideas that require impossible data (e.g., "everyone's tax records for 100 years"). If a dataset needs to be constructed, explain concretely how and confirm the raw inputs are available. Tyler has funding to buy data, but it must be something that's actually for sale.
 - **Vary the ideas.** Don't generate 5 variations of the same theme within a track. Ensure diversity.
 - **Calibrate ambition.** "Next paper" ideas should be clearly doable. "Massive impact" ideas should be swinging for the fences.
 
