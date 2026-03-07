@@ -9,22 +9,25 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
     <header>
         <div class="container">
             <h1><a href="index.html">Tyler Muir</a></h1>
+            <button class="menu-toggle" aria-label="Toggle navigation menu">&#9776;</button>
             <nav>
                 <ul>
                     <li><a href="index.html">Research</a></li>
-                    <li><a href="data.html">Data</a></li>
+                    <li><a href="data.html" class="active">Data</a></li>
                     <li><a href="fun.html">Fun</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <main class="container">
+    <main class="container" id="main-content">
         <section>
             <h2>Data</h2>
             <ul class="data-list">
@@ -37,7 +40,7 @@
                     <p class="description">Updated to Q3 of 2017</p>
                 </li>
                 <li>
-                    <strong>Cost of External Finance Series</strong> <em>(link coming soon)</em>
+                    <strong>Cost of External Finance Series</strong> <em>(available upon request)</em>
                     <p class="description">Used in "Aggregate Issuance and Savings Waves" (with Eisfeldt), Journal of Monetary Economics 2016</p>
                 </li>
             </ul>
@@ -52,5 +55,10 @@
             <p>Tyler Muir &bull; UCLA Anderson School of Management</p>
         </div>
     </footer>
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('open');
+        });
+    </script>
 </body>
 </html>

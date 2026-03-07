@@ -9,14 +9,17 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
     <header>
         <div class="container">
             <h1><a href="index.html">Tyler Muir</a></h1>
+            <button class="menu-toggle" aria-label="Toggle navigation menu">&#9776;</button>
             <nav>
                 <ul>
-                    <li><a href="index.html">Research</a></li>
+                    <li><a href="index.html" class="active">Research</a></li>
                     <li><a href="data.html">Data</a></li>
                     <li><a href="fun.html">Fun</a></li>
                 </ul>
@@ -24,16 +27,15 @@
         </div>
     </header>
 
-    <main class="container">
+    <main class="container" id="main-content">
         <section class="profile">
             <img src="images/profile.jpg" alt="Tyler Muir" class="profile-image">
             <div class="profile-info">
                 <h2>Tyler Muir</h2>
                 <p class="title">Professor of Finance</p>
                 <p class="title">Donnalisa '86 and Bill Barnum Endowed Term Chair in Management</p>
-                <p class="affiliation">UCLA Anderson</p>
-                <p class="title">NBER Research Associate</p>
-                <p class="title">Faculty Co-Director, Fink Center for Finance &amp; Investments</p>
+                <p class="affiliation">UCLA Anderson School of Management</p>
+                <p class="affiliation">NBER Research Associate</p>
                 <p class="email">tyler.muir [at] anderson.ucla.edu</p>
                 <div class="profile-links">
                     <a href="https://www.dropbox.com/scl/fi/u626nkier4eon4ksr64s6/Muir_Tyler_CV.pdf?rlkey=u4kqhc3w4d6hwjnec8a3az12f&dl=0" target="_blank">CV</a>
@@ -57,7 +59,7 @@
             <ul class="paper-list">
                 <li class="paper-item">
                     <a href="https://www.dropbox.com/scl/fi/thdpyldmup1yul03rmkh8/HaddadMuir_IntermediariesAssetPrices.pdf?rlkey=yvy7vjkwcc7hmh63wtqbi2k9l&dl=0" class="paper-title" target="_blank">Intermediaries and Asset Prices</a>
-                    <button class="abstract-toggle" onclick="toggleAbstract(this)">[abstract]</button>
+                    <button class="abstract-toggle" aria-expanded="false">[abstract]</button>
                     <div class="tagline">A comprehensive survey of how financial intermediaries shape asset prices, risk premia, and macroeconomic dynamics.</div>
                     <div class="coauthors">with <a href="http://www.anderson.ucla.edu/faculty-and-research/finance/faculty/haddad">Valentin Haddad</a></div>
                     <div class="publication">forthcoming, Journal of Economic Literature</div>
@@ -65,7 +67,7 @@
                 </li>
                 <li class="paper-item">
                     <a href="https://www.dropbox.com/scl/fi/yaw81nklyqnd0k371osw4/HM_published.pdf?rlkey=oed2yhhhpish7x86secc4q1vz&dl=0" class="paper-title" target="_blank">Market Macrostructure: Institutions and Asset Prices</a>
-                    <button class="abstract-toggle" onclick="toggleAbstract(this)">[abstract]</button>
+                    <button class="abstract-toggle" aria-expanded="false">[abstract]</button>
                     <div class="tagline">How three big structural forces — passive investing, central bank purchases, and leveraged intermediaries — shape asset prices.</div>
                     <div class="coauthors">with <a href="http://www.anderson.ucla.edu/faculty-and-research/finance/faculty/haddad">Valentin Haddad</a></div>
                     <div class="publication">Annual Review of Financial Economics, November 2025</div>
@@ -73,7 +75,7 @@
                 </li>
                 <li class="paper-item">
                     <a href="https://www.dropbox.com/s/16j1hos5gjo5o08/AdrianEtulaMuirJF2014.pdf?dl=0" class="paper-title" target="_blank">Financial Intermediaries and the Cross-Section of Asset Returns</a>
-                    <button class="abstract-toggle" onclick="toggleAbstract(this)">[abstract]</button>
+                    <button class="abstract-toggle" aria-expanded="false">[abstract]</button>
                     <div class="tagline">A single factor based on broker-dealer leverage prices stocks and bonds as well as multi-factor models — intermediaries are the marginal pricers in financial markets.</div>
                     <div class="coauthors">with <a href="http://sites.google.com/site/tobiasadrian/home">Tobias Adrian</a> and <a href="http://www.erkkoetula.com/">Erkko Etula</a></div>
                     <div class="publication">Journal of Finance, December 2014</div>
@@ -91,7 +93,7 @@
                 </li>
                 <li class="paper-item">
                     <a href="https://www.dropbox.com/s/tfh09k9kg3fq4sa/dointermediariesmatter.pdf?dl=0" class="paper-title" target="_blank">Do Intermediaries Matter for Aggregate Asset Prices?</a>
-                    <button class="abstract-toggle" onclick="toggleAbstract(this)">[abstract]</button>
+                    <button class="abstract-toggle" aria-expanded="false">[abstract]</button>
                     <div class="tagline">Intermediaries independently drive risk premia, especially in markets where households don't directly participate.</div>
                     <div class="coauthors">with <a href="http://www.anderson.ucla.edu/faculty-and-research/finance/faculty/haddad">Valentin Haddad</a></div>
                     <div class="publication">Journal of Finance, December 2021</div>
@@ -103,7 +105,7 @@
                 </li>
                 <li class="paper-item">
                     <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3116417" class="paper-title" target="_blank">Intermediaries and Asset Prices: Evidence from the U.S., U.K., and Japan, 1870-2016</a>
-                    <button class="abstract-toggle" onclick="toggleAbstract(this)">[abstract]</button>
+                    <button class="abstract-toggle" aria-expanded="false">[abstract]</button>
                     <div class="tagline">Intermediary balance sheet expansion predicts low returns across stocks, bonds, currencies, and housing — in three countries over 150 years.</div>
                     <div class="coauthors">with <a href="https://www.johnson.cornell.edu/faculty-and-research/faculty/mdb327">Matt Baron</a></div>
                     <div class="publication">Review of Financial Studies, May 2022</div>
@@ -118,7 +120,7 @@
             <ul class="paper-list">
                 <li class="paper-item">
                     <a href="https://www.dropbox.com/s/4y24nnab001bd0l/JF_PublishedVersion_Moreira_Muir_2017.pdf?dl=0" class="paper-title" target="_blank">Volatility-Managed Portfolios</a>
-                    <button class="abstract-toggle" onclick="toggleAbstract(this)">[abstract]</button>
+                    <button class="abstract-toggle" aria-expanded="false">[abstract]</button>
                     <div class="tagline">Scaling down risk when volatility spikes improves Sharpe ratios across asset classes — challenging conventional wisdom about staying the course in crises.</div>
                     <div class="coauthors">with <a href="https://sites.google.com/view/alanmoreira/">Alan Moreira</a></div>
                     <div class="publication">Journal of Finance, August 2017</div>
@@ -137,7 +139,7 @@
                 </li>
                 <li class="paper-item">
                     <a href="https://www.dropbox.com/s/04nmwmfwutatbsf/MoreiraMuirJFE2018.pdf?dl=0" class="paper-title" target="_blank">Should Long-Term Investors Time Volatility?</a>
-                    <button class="abstract-toggle" onclick="toggleAbstract(this)">[abstract]</button>
+                    <button class="abstract-toggle" aria-expanded="false">[abstract]</button>
                     <div class="tagline">Ignoring volatility changes costs long-term investors about 2.4% of wealth per year.</div>
                     <div class="coauthors">with <a href="https://sites.google.com/view/alanmoreira/">Alan Moreira</a></div>
                     <div class="publication">Journal of Financial Economics, March 2019 [Lead Article]</div>
@@ -145,7 +147,7 @@
                 </li>
                 <li class="paper-item">
                     <a href="https://www.dropbox.com/s/nm8t0dsacdzyhe9/VolUnderreactionMain.pdf?dl=0" class="paper-title" target="_blank">Volatility Expectations and Returns</a>
-                    <button class="abstract-toggle" onclick="toggleAbstract(this)">[abstract]</button>
+                    <button class="abstract-toggle" aria-expanded="false">[abstract]</button>
                     <div class="tagline">Investors underreact to volatility shocks, then overreact — explaining why the risk-return tradeoff appears weak or negative in the data.</div>
                     <div class="coauthors">with <a href="https://sites.google.com/site/lalochstoer/">Lars Lochstoer</a></div>
                     <div class="publication">Journal of Finance, April 2022</div>
@@ -153,7 +155,7 @@
                 </li>
                 <li class="paper-item">
                     <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3148693" class="paper-title" target="_blank">Hedging Risk Factors</a>
-                    <button class="abstract-toggle" onclick="toggleAbstract(this)">[abstract]</button>
+                    <button class="abstract-toggle" aria-expanded="false">[abstract]</button>
                     <div class="tagline">Standard risk factors can be hedged at almost no cost to average returns, generating large alphas.</div>
                     <div class="coauthors">with <a href="https://bernardherskovic.com/">Bernard Herskovic</a> and <a href="https://sites.google.com/view/alanmoreira/">Alan Moreira</a></div>
                     <div class="publication">R&R at Review of Financial Studies</div>
@@ -161,7 +163,7 @@
                 </li>
                 <li class="paper-item">
                     <span class="paper-title">(Why) Have Financial Markets Become More Volatile? The Role of Market Index Trading</span>
-                    <button class="abstract-toggle" onclick="toggleAbstract(this)">[abstract]</button>
+                    <button class="abstract-toggle" aria-expanded="false">[abstract]</button>
                     <div class="tagline">Stock market volatility has doubled since mid-century — driven by the rise of index trading through ETFs and futures, not economic fundamentals.</div>
                     <div class="coauthors">with Lars Lochstoer</div>
                     <div class="abstract">We document a persistent doubling of U.S. stock market volatility since the mid-20th century, which cannot be attributed to macroeconomic fundamentals or idiosyncratic firm shocks. Instead, we show that the increased volume and dominance of index trading -- via futures, ETFs, and extended trading hours -- has structurally raised aggregate stock market volatility. We exploit the introduction of E-mini S&amp;P 500 futures and historical NYSE trading-hour adjustments as natural experiments to provide causal evidence that index-level trading amplifies market variance through trading volume. Our model of index demand shocks rationalizes these findings, predicting higher market-level volatility, reduced return autocorrelation, and an increased share of systematic risk.</div>
@@ -175,7 +177,7 @@
             <ul class="paper-list">
                 <li class="paper-item">
                     <a href="https://www.dropbox.com/s/hcu2yudygm1avsk/WhateverItTakes.pdf?dl=0" class="paper-title" target="_blank">Whatever it Takes? The Impact of Conditional Policy Promises</a>
-                    <button class="abstract-toggle" onclick="toggleAbstract(this)">[abstract]</button>
+                    <button class="abstract-toggle" aria-expanded="false">[abstract]</button>
                     <div class="tagline">Central bank announcements work largely through promises of bigger action if things worsen — "policy puts" that reshape risk before any purchases occur.</div>
                     <div class="coauthors">with <a href="http://www.anderson.ucla.edu/faculty-and-research/finance/faculty/haddad">Valentin Haddad</a> and <a href="https://sites.google.com/view/alanmoreira/">Alan Moreira</a></div>
                     <div class="publication">American Economic Review, January 2025</div>
@@ -183,7 +185,7 @@
                 </li>
                 <li class="paper-item">
                     <a href="https://www.dropbox.com/scl/fi/v8dl87heoihd0q6nqnzs0/qe_rule_posted.pdf?rlkey=23uotbmngwgjaz0dqvb4rrpfh&dl=0" class="paper-title" target="_blank">Asset Purchase Rules: How QE Transformed the Bond Market</a>
-                    <button class="abstract-toggle" onclick="toggleAbstract(this)">[abstract]</button>
+                    <button class="abstract-toggle" aria-expanded="false">[abstract]</button>
                     <div class="tagline">QE works as a state-contingent insurance plan: markets expect bigger purchases in bad states, which lowers yields even before the Fed acts.</div>
                     <div class="coauthors">with <a href="http://www.anderson.ucla.edu/faculty-and-research/finance/faculty/haddad">Valentin Haddad</a> and <a href="https://sites.google.com/view/alanmoreira/">Alan Moreira</a></div>
                     <div class="award">WFA Nasdaq Award, Best Paper in Asset Pricing</div>
@@ -195,14 +197,14 @@
                 </li>
                 <li class="paper-item">
                     <span class="paper-title">Asset Purchase Rules in the Euro Area and Their Effect on Bond Markets</span>
-                    <button class="abstract-toggle" onclick="toggleAbstract(this)">[abstract]</button>
+                    <button class="abstract-toggle" aria-expanded="false">[abstract]</button>
                     <div class="tagline">ECB bond purchases provide ex-ante insurance to investors by stabilizing future sovereign spreads — the promise of intervention matters as much as the intervention itself.</div>
                     <div class="coauthors">with <a href="http://www.anderson.ucla.edu/faculty-and-research/finance/faculty/haddad">Valentin Haddad</a> and <a href="https://sites.google.com/view/alanmoreira/">Alan Moreira</a></div>
                     <div class="abstract">Asset purchase policies are a dynamic state-contingent plan instead of a succession of independent interventions. We apply this view to the experience of asset purchase programs in the Euro area. Our evidence suggests that the market expects interventions in large part based on sovereign spreads and the total supply of sovereign credit risk. In turn, this provides a powerful ex-ante mechanism to lower spreads in the Euro area: because interventions typically occur when spreads, debt issuance, and dislocations are high, purchases provide ex-ante insurance to bond investors by stabilizing future sovereign spreads. This increases demand and lowers credit risk premiums on sovereign bonds. We illustrate this channel using both low frequency data and event study analysis, including using option prices to assess the state-contingent nature of interventions.</div>
                 </li>
                 <li class="paper-item">
                     <a href="https://drive.google.com/file/d/1O0i9GDvncKZMOLhGdbdw6-ZRYX5TdZej/view" class="paper-title" target="_blank">When Selling Becomes Viral: Disruptions in Debt Markets in the COVID-19 Crisis and the Fed's Response</a>
-                    <button class="abstract-toggle" onclick="toggleAbstract(this)">[abstract]</button>
+                    <button class="abstract-toggle" aria-expanded="false">[abstract]</button>
                     <div class="tagline">The March 2020 crash in corporate bonds was driven by forced selling from mutual funds, not credit risk. The Fed's purchase announcement reversed it instantly.</div>
                     <div class="coauthors">with <a href="http://www.anderson.ucla.edu/faculty-and-research/finance/faculty/haddad">Valentin Haddad</a> and <a href="https://sites.google.com/view/alanmoreira/">Alan Moreira</a></div>
                     <div class="publication">Review of Financial Studies, October 2021</div>
@@ -221,14 +223,14 @@
             <ul class="paper-list">
                 <li class="paper-item">
                     <a href="https://www.dropbox.com/s/ik7i78d748fe32l/Muir_QJE_May2017.pdf?dl=0" class="paper-title" target="_blank">Financial Crises and Risk Premia</a>
-                    <button class="abstract-toggle" onclick="toggleAbstract(this)">[abstract]</button>
+                    <button class="abstract-toggle" aria-expanded="false">[abstract]</button>
                     <div class="tagline">Expected returns surge in financial crises but not wars or recessions — pointing to the financial sector as the key driver of time-varying risk premia.</div>
                     <div class="publication">Quarterly Journal of Economics, May 2017</div>
                     <div class="abstract">I analyze the behavior of risk premia in financial crises, wars, and recessions in an international panel spanning over 140 years and 14 countries. Expected returns increase substantially in financial crises, but not in the other episodes. Asset prices decline in all episodes, but the decline in financial crises is substantially larger than the decline in fundamentals so that expected returns going forward are large. By disentangling financial crises from other bad macroeconomic times, the results suggest that financial crises are particularly important to understanding why risk premia vary, and theories where asset prices are related to the health of the financial sector appear particularly promising.</div>
                 </li>
                 <li class="paper-item">
                     <a href="https://www.dropbox.com/s/kgl36g5grguwyr8/CreditAcrossCycle_JFsubmission_R2_V6.pdf?dl=0" class="paper-title" target="_blank">How Credit Cycles Across a Financial Crisis</a>
-                    <button class="abstract-toggle" onclick="toggleAbstract(this)">[abstract]</button>
+                    <button class="abstract-toggle" aria-expanded="false">[abstract]</button>
                     <div class="tagline">Credit spreads and growth predict crises: spreads fall to unusual lows during credit booms, then spike when the crisis hits.</div>
                     <div class="coauthors">with <a href="https://people.stanford.edu/akris/">Arvind Krishnamurthy</a></div>
                     <div class="publication">Journal of Finance, March 2025</div>
@@ -236,7 +238,7 @@
                 </li>
                 <li class="paper-item">
                     <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3306789" class="paper-title" target="_blank">1930: First Modern Crisis</a>
-                    <button class="abstract-toggle" onclick="toggleAbstract(this)">[abstract]</button>
+                    <button class="abstract-toggle" aria-expanded="false">[abstract]</button>
                     <div class="tagline">The first year of the Great Depression saw a 20% output drop with no bank run — because banks quietly cut lending and hoarded safe assets.</div>
                     <div class="coauthors">with <a href="http://faculty.som.yale.edu/garygorton/">Gary Gorton</a> and <a href="https://sites.google.com/view/toomaslaarits">Toomas Laarits</a></div>
                     <div class="publication">Financial History Review, April 2024</div>
@@ -244,28 +246,28 @@
                 </li>
                 <li class="paper-item">
                     <a href="https://www.dropbox.com/s/pkxswmb3z21b0ll/IsRiskMispriced.pdf?dl=0" class="paper-title" target="_blank">Is Risk Mispriced in a Credit Boom?</a>
-                    <button class="abstract-toggle" onclick="toggleAbstract(this)">[abstract]</button>
+                    <button class="abstract-toggle" aria-expanded="false">[abstract]</button>
                     <div class="tagline">During credit booms, investors accept lower risk premia even as crash risk doubles — consistent with extrapolative beliefs.</div>
                     <div class="publication">Prepared for the INET Private Debt Initiative</div>
                     <div class="abstract">This paper examines the pricing of risk for both stocks and real estate during credit booms from 1870 to 2015 across 17 countries. During a credit boom, investors are willing to accept lower risk premiums despite the fact that the overall amount of risk in the economy is rising -- expected excess returns for equities and housing both fall while crash likelihood doubles. The most compelling explanation is that investors extrapolate past low-risk environments into the future, creating excessive optimism that prompts overleveraging and inflated asset prices.</div>
                 </li>
                 <li class="paper-item">
                     <a href="https://www.dropbox.com/scl/fi/nyb64gu1wycdrc4vox8np/Bank_Rate_Dispersion_KMZ.pdf?rlkey=gi3ei4dwb9w1hyqjfcoo3dbb7&dl=0" class="paper-title" target="_blank">Diverging Banking Sector: New Facts and Macro Implications</a>
-                    <button class="abstract-toggle" onclick="toggleAbstract(this)">[abstract]</button>
+                    <button class="abstract-toggle" aria-expanded="false">[abstract]</button>
                     <div class="tagline">Two types of banks have emerged: online high-rate banks taking credit risk, and traditional low-rate banks holding long-term assets. This reshapes how monetary policy transmits.</div>
                     <div class="coauthors">with <a href="https://shohinikundu.github.io/">Shohini Kundu</a> and <a href="https://jinyuan-zhang.github.io/research/">Jinyuan Zhang</a></div>
                     <div class="abstract">We document the emergence of two distinct types of banks over the past decade: high-rate banks, which set deposit rates to match market rates, hold shorter-term assets, and earn a spread through higher credit risk in personal and business loans; and low-rate banks, which offer low, stable deposit rates, hold longer-term assets like MBS, and lend less to firms. This divergence shifts deposits toward high-rate banks during monetary tightening, reducing the banking sector's maturity transformation capacity and concentrating credit risk among high-rate banks. Technological advancements appear to drive this trend: high-rate banks operate primarily online and attract rate-sensitive, less-sticky depositors.</div>
                 </li>
                 <li class="paper-item">
                     <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4412256" class="paper-title" target="_blank">Bank Fragility when Depositors are the Asset</a>
-                    <button class="abstract-toggle" onclick="toggleAbstract(this)">[abstract]</button>
+                    <button class="abstract-toggle" aria-expanded="false">[abstract]</button>
                     <div class="tagline">Banks' most valuable asset — sticky depositors — is also their biggest vulnerability when rates rise.</div>
                     <div class="coauthors">with <a href="http://www.anderson.ucla.edu/faculty-and-research/finance/faculty/haddad">Valentin Haddad</a> and <a href="https://www.barneyhglaser.com/">Barney Hartman-Glaser</a></div>
                     <div class="abstract">Banks' relationships with their depositors are valuable when depositors remain sticky, but this value evaporates if they leave. This tension makes banks fragile when interest rates increase and long-term asset values are depressed. In this scenario, if all of its depositors leave, the bank fails, which justifies depositors' departure in the first place. Such failures can happen even when banks only invest in liquid assets and when deposits are insured, and they are more likely for banks with the most valuable relationships. This fragility leads to sharp changes in the exposure of bank values to interest rate risk: insensitive most of the time but highly responsive when asset losses are about to catch up with them.</div>
                 </li>
                 <li class="paper-item">
                     <a href="http://papers.ssrn.com/sol3/papers.cfm?abstract_id=2638886" class="paper-title" target="_blank">Mobile Collateral vs Immobile Collateral</a>
-                    <button class="abstract-toggle" onclick="toggleAbstract(this)">[abstract]</button>
+                    <button class="abstract-toggle" aria-expanded="false">[abstract]</button>
                     <div class="tagline">History suggests requiring banks to back short-term debt with Treasuries may not reduce fragility — and could increase it.</div>
                     <div class="coauthors">with <a href="http://faculty.som.yale.edu/garygorton/">Gary Gorton</a> and <a href="https://sites.google.com/view/toomaslaarits/">Toomas Laarits</a></div>
                     <div class="publication">Journal of Money Credit and Banking, September 2022</div>
@@ -283,7 +285,7 @@
             <ul class="paper-list">
                 <li class="paper-item">
                     <a href="https://www.dropbox.com/s/rww042uqbwag5at/Eisfeldt_Muir_JME_Dec2016.pdf?dl=0" class="paper-title" target="_blank">Aggregate External Financing and Savings Waves</a>
-                    <button class="abstract-toggle" onclick="toggleAbstract(this)">[abstract]</button>
+                    <button class="abstract-toggle" aria-expanded="false">[abstract]</button>
                     <div class="tagline">Firms sometimes raise costly external finance just to hoard cash — we estimate the shadow value of liquidity driving this behavior.</div>
                     <div class="coauthors">with <a href="https://sites.google.com/site/andrealeisfeldt/">Andrea Eisfeldt</a></div>
                     <div class="publication">Journal of Monetary Economics, December 2016</div>
@@ -314,14 +316,34 @@
         </div>
     </footer>
 
+    <button class="back-to-top" aria-label="Back to top">&uarr;</button>
+
     <script>
-        function toggleAbstract(button) {
-            const abstract = button.parentElement.querySelector('.abstract');
-            if (abstract) {
-                abstract.classList.toggle('show');
-                button.textContent = abstract.classList.contains('show') ? '[hide]' : '[abstract]';
+        // Abstract toggle via event delegation
+        document.addEventListener('click', function(e) {
+            if (e.target.classList.contains('abstract-toggle')) {
+                const abstract = e.target.parentElement.querySelector('.abstract');
+                if (abstract) {
+                    const isOpen = abstract.classList.toggle('show');
+                    e.target.textContent = isOpen ? '[hide]' : '[abstract]';
+                    e.target.setAttribute('aria-expanded', isOpen);
+                }
             }
-        }
+        });
+
+        // Mobile menu toggle
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('open');
+        });
+
+        // Back to top button
+        const backToTop = document.querySelector('.back-to-top');
+        window.addEventListener('scroll', function() {
+            backToTop.classList.toggle('visible', window.scrollY > 400);
+        });
+        backToTop.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
     </script>
 </body>
 </html>
