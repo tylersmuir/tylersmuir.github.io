@@ -24,9 +24,9 @@ warnings.filterwarnings("ignore", category=FutureWarning)
 def build_volmanaged(daily_factors, monthly_factors, monthly_rf, factors):
     """Build vol-managed returns for a set of factors. Returns a DataFrame."""
 
-    # Realized variance = sum of squared daily returns within each month
+    # Realized variance = demeaned sum of squares within each month (paper eq 2)
     ym = daily_factors.index.to_period("M")
-    rv = daily_factors[factors].groupby(ym).apply(lambda x: (x**2).sum())
+    rv = daily_factors[factors].groupby(ym).apply(lambda x: x.var(ddof=0) * len(x))
     rv.index = rv.index.to_timestamp()
 
     # Convert monthly index from PeriodIndex to Timestamp if needed
