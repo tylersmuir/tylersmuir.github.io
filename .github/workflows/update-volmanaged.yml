@@ -1,0 +1,39 @@
+name: Update Vol-Managed Factors
+
+on:
+  schedule:
+    # Run on the 5th of each month at 8am UTC (midnight Pacific)
+    # Using the 5th to give Ken French time to post the prior month's data
+    - cron: '0 8 5 * *'
+  workflow_dispatch: # Allow manual trigger from GitHub UI
+
+jobs:
+  update-data:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install pandas pandas-datareader numpy
+
+      - name: Build vol-managed factors
+        run: cd data && python build_volmanaged_factors.py
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/VolManagedFactors.csv data/VolManagedFactors_Long.csv
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Update vol-managed factor data (automated)"
+            git push
+          fi
