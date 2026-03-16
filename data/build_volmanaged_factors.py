@@ -2,10 +2,11 @@
 Build volatility-managed factor returns following Moreira & Muir (JF 2017).
 
 For each factor f, the vol-managed return is:
-    r^vm_{t+1} = (sigma^2_full / sigma^2_t) * r_{t+1}
+    f^vm_{t+1} = c / RV_t * f_{t+1}
 
-where sigma^2_t is realized variance from daily returns within month t,
-and sigma^2_full is the full-sample variance of the factor.
+where RV_t is realized variance from daily returns within month t,
+and c is chosen so the VM factor has the same unconditional standard
+deviation as the original factor.
 
 Data source: Ken French's data library (daily and monthly factor returns).
 Output:
@@ -42,16 +43,19 @@ def build_volmanaged(daily_factors, monthly_factors, monthly_rf, factors):
     # Use last month's RV to scale this month's return
     rv_lagged = rv.shift(1)
 
-    # Full-sample variance for rescaling
-    full_sample_var = mf.var()
-
-    # Vol-managed return
-    vm = (full_sample_var / rv_lagged) * mf
+    # Raw vol-managed return: (1 / RV_t) * f_{t+1}
+    vm_raw = mf / rv_lagged
 
     # Drop first row (no lagged RV)
-    vm = vm.dropna()
-    mf = mf.loc[vm.index]
-    rf = rf.loc[vm.index]
+    vm_raw = vm_raw.dropna()
+    mf = mf.loc[vm_raw.index]
+    rf = rf.loc[vm_raw.index]
+
+    # Rescale so VM factor has same unconditional std as original
+    vm = vm_raw.copy()
+    for f in factors:
+        c = mf[f].std() / vm_raw[f].std()
+        vm[f] = vm_raw[f] * c
 
     # Rename and combine: VM factors, original factors, RF last
     vm_cols = {f: f + "_VM" for f in factors}
