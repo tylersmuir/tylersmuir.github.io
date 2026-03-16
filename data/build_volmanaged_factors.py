@@ -10,7 +10,7 @@ deviation as the original factor.
 
 Data source: Ken French's data library (daily and monthly factor returns).
 Output:
-  - VolManagedFactors.csv: 6 factors (Mkt-RF, SMB, HML, RMW, CMA, Mom), 1927+
+  - VolManagedFactors.csv: 6 factors (Mkt-RF, SMB, HML, Mom, RMW, CMA), 1927+
     RMW and CMA columns are blank before 1963 (data not available earlier).
 """
 
