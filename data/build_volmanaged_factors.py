@@ -9,8 +9,8 @@ and sigma^2_full is the full-sample variance of the factor.
 
 Data source: Ken French's data library (daily and monthly factor returns).
 Output:
-  - VolManagedFactors.csv: 6 factors (Mkt-RF, SMB, HML, RMW, CMA, Mom), 1963+
-  - VolManagedFactors_Long.csv: 4 factors (Mkt-RF, SMB, HML, Mom), 1926+
+  - VolManagedFactors.csv: 6 factors (Mkt-RF, SMB, HML, RMW, CMA, Mom), 1927+
+    RMW and CMA columns are blank before 1963 (data not available earlier).
 """
 
 import pandas as pd
@@ -20,8 +20,8 @@ import warnings
 warnings.filterwarnings("ignore", category=FutureWarning)
 
 
-def build_volmanaged(daily_factors, monthly_factors, monthly_rf, factors, outpath):
-    """Build vol-managed returns for a set of factors and save to CSV."""
+def build_volmanaged(daily_factors, monthly_factors, monthly_rf, factors):
+    """Build vol-managed returns for a set of factors. Returns a DataFrame."""
 
     # Realized variance = sum of squared daily returns within each month
     ym = daily_factors.index.to_period("M")
@@ -62,18 +62,6 @@ def build_volmanaged(daily_factors, monthly_factors, monthly_rf, factors, outpat
     out.index.name = "Date"
     out.index = out.index.strftime("%Y-%m")
 
-    out.to_csv(outpath, float_format="%.4f")
-
-    print(f"\nSaved {outpath}")
-    print(f"  Shape: {out.shape}")
-    print(f"  Date range: {out.index[0]} to {out.index[-1]}")
-    print(f"  Columns: {list(out.columns)}")
-    print(f"  Annualized Sharpe ratios (original → vol-managed):")
-    for f in factors:
-        sr_orig = out[f].mean() / out[f].std() * np.sqrt(12)
-        sr_vm = out[f + "_VM"].mean() / out[f + "_VM"].std() * np.sqrt(12)
-        print(f"    {f:6s}:  {sr_orig:.3f}  →  {sr_vm:.3f}")
-
     return out
 
 
@@ -99,20 +87,41 @@ for df in [daily_3f, monthly_3f, daily_5f, monthly_5f, daily_mom, monthly_mom]:
 daily_mom = daily_mom.rename(columns={daily_mom.columns[0]: "Mom"})
 monthly_mom = monthly_mom.rename(columns={monthly_mom.columns[0]: "Mom"})
 
-# --- Build long-history file: Mkt-RF, SMB, HML, Mom (1926+) ---
+# --- Build long-history 4-factor series: Mkt-RF, SMB, HML, Mom (1926+) ---
 
 daily_long = daily_3f.join(daily_mom[["Mom"]])
 monthly_long = monthly_3f.join(monthly_mom[["Mom"]])
 
 long_factors = ["Mkt-RF", "SMB", "HML", "Mom"]
-build_volmanaged(daily_long, monthly_long[long_factors], monthly_long[["RF"]],
-                 long_factors, "VolManagedFactors_Long.csv")
+out_long = build_volmanaged(daily_long, monthly_long[long_factors], monthly_long[["RF"]],
+                            long_factors)
 
-# --- Build 6-factor file: all six (1963+) ---
+# --- Build 1963+ series for RMW and CMA ---
 
 daily_6f = daily_5f.join(daily_mom[["Mom"]])
 monthly_6f = monthly_5f.join(monthly_mom[["Mom"]])
 
-all_factors = ["Mkt-RF", "SMB", "HML", "RMW", "CMA", "Mom"]
-build_volmanaged(daily_6f, monthly_6f[all_factors], monthly_6f[["RF"]],
-                 all_factors, "VolManagedFactors.csv")
+extra_factors = ["RMW", "CMA"]
+out_extra = build_volmanaged(daily_6f, monthly_6f[extra_factors], monthly_6f[["RF"]],
+                             extra_factors)
+
+# --- Merge into a single file: long history + RMW/CMA columns (blank before 1963) ---
+
+# Drop RF from the extra file (already in the long file)
+out_extra = out_extra.drop(columns=["RF"])
+
+# Merge on date index — long file has all dates, extra fills in from 1963
+out = out_long.join(out_extra, how="left")
+
+# Reorder columns: all VM factors, then all originals, then RF
+vm_order = ["Mkt-RF_VM", "SMB_VM", "HML_VM", "RMW_VM", "CMA_VM", "Mom_VM"]
+orig_order = ["Mkt-RF", "SMB", "HML", "RMW", "CMA", "Mom"]
+out = out[vm_order + orig_order + ["RF"]]
+
+out.to_csv("VolManagedFactors.csv", float_format="%.4f")
+
+print(f"\nSaved VolManagedFactors.csv")
+print(f"  Shape: {out.shape}")
+print(f"  Date range: {out.index[0]} to {out.index[-1]}")
+print(f"  Columns: {list(out.columns)}")
+print(f"  RMW/CMA first non-blank: {out['RMW'].first_valid_index()}")
