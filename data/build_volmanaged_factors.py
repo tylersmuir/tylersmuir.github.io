@@ -53,15 +53,16 @@ def build_volmanaged(daily_factors, monthly_factors, monthly_rf, factors, outpat
     mf = mf.loc[vm.index]
     rf = rf.loc[vm.index]
 
-    # Rename and combine: RF, VM factors, then original factors
+    # Rename and combine: VM factors, original factors, RF last
     vm_cols = {f: f + "_VM" for f in factors}
     vm = vm.rename(columns=vm_cols)
 
-    out = pd.concat([rf, vm, mf], axis=1)
+    out = pd.concat([vm, mf, rf], axis=1)
+    out = out * 100  # Convert to percent
     out.index.name = "Date"
     out.index = out.index.strftime("%Y-%m")
 
-    out.to_csv(outpath, float_format="%.6f")
+    out.to_csv(outpath, float_format="%.4f")
 
     print(f"\nSaved {outpath}")
     print(f"  Shape: {out.shape}")
