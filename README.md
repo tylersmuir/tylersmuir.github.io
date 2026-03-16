@@ -46,6 +46,38 @@ git push -u origin main
 
 4. Enable "Enforce HTTPS" in GitHub Pages settings once the certificate is issued
 
+## Recent Changes (March 2026)
+
+- **Section reorganization**: Moved Central Banks ahead of Volatility. Moved "Financial Crises and Risk Premia" (QJE 2017) into Intermediaries section.
+- **Leverage factor data extended**: Updated AEM_LevFactor.csv through 2025Q3. Fixed data.html labels (Monthly → Quarterly).
+- **Slides added for 12 papers** (stored in `/slides/`):
+  - Whatever It Takes (MFS Lecture 2025)
+  - Do Intermediaries Matter (AFA 2019)
+  - Financial Crises and Risk Premia (JMP/NBER AP SI 2014)
+  - Hedging Risk Factors (NBER AP 2019)
+  - Vol Expectations (Stanford 2021)
+  - Long-Term Vol Timing
+  - Market Volatility (ASU 2026)
+  - Bank Fragility (Haddad-Hartman-Glaser-Muir)
+  - Asset Purchase Rules Euro Area (SITE Oct 2025)
+  - How Credit Cycles (FRIC 2015)
+  - Intermediaries US/UK/Japan (Arrowstreet 2021)
+  - Is Risk Mispriced (INET 2019)
+
+## TODO — Papers Still Missing Slides
+
+- Diverging Banking Sector (Kundu-Muir-Zhang) — check SHARE_Shohini_Jinyuan folder
+- 1930: First Modern Crisis (Gorton-Laarits-Muir)
+- Mobile Collateral vs Immobile Collateral (Gorton-Laarits-Muir)
+- Aggregate External Financing (Eisfeldt-Muir)
+- Intermediaries and Asset Prices (JEL survey, Haddad-Muir)
+- Market Macrostructure (Tyler making slides himself)
+
+## Other Pages Not Yet Built
+
+- Teaching page
+- Fun page
+
 ## Adding Your Profile Photo
 
 Replace `images/profile.jpg` with your professional photo. Recommended:
