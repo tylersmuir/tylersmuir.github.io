@@ -118,8 +118,8 @@ out_extra = out_extra.drop(columns=["RF"])
 out = out_long.join(out_extra, how="left")
 
 # Reorder columns: all VM factors, then all originals, then RF
-vm_order = ["Mkt-RF_VM", "SMB_VM", "HML_VM", "RMW_VM", "CMA_VM", "Mom_VM"]
-orig_order = ["Mkt-RF", "SMB", "HML", "RMW", "CMA", "Mom"]
+vm_order = ["Mkt-RF_VM", "SMB_VM", "HML_VM", "Mom_VM", "RMW_VM", "CMA_VM"]
+orig_order = ["Mkt-RF", "SMB", "HML", "Mom", "RMW", "CMA"]
 out = out[vm_order + orig_order + ["RF"]]
 
 out.to_csv("VolManagedFactors.csv", float_format="%.4f")
