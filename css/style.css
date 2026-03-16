@@ -363,6 +363,15 @@ section h2 {
     background: #d9f99d;
 }
 
+.media-badge.data {
+    background: #fed7aa;
+    color: #9a3412;
+}
+
+.media-badge.data:hover {
+    background: #fdba74;
+}
+
 .media-links {
     margin-top: 0.5rem;
     display: flex;
